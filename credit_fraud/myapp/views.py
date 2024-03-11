@@ -1,15 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-# Create your views here.
+def form1(request):
+    return render(request,'form1.html')
 
-def home(request):
-    return HttpResponse('Hello world')
-    
-def room(request):
-    return HttpResponse('I am Saifee')
-def myself(request):
-    return HttpResponse('Welcome to the app')
-
-def epl(request):
-    return HttpResponse('I love football')
+def info(request):
+    transactionId = request.get('transactionId')
+    customerID = request.get('customerID')
+    terminalID = request.get('terminalID')
+    datetime = request.get('datetime')
+    transactionAmount = request.get('transactionAmount')
+    return render(request, 'details.html', {'details':{transactionId,transactionAmount,terminalID,customerID,datetime}})

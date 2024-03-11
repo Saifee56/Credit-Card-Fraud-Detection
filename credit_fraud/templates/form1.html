@@ -60,7 +60,7 @@
 </head>
 <body>
     <h1>Credit Card Details</h1>
-    <form id="TransactionForm" action="method.php" method="post" target="detailsFrame">
+    <form action="details">
         <label for="transactionId">Transaction ID : </label> 
         <input type="text" id="transactionId" name="transactionId" required> <br>
 
@@ -76,10 +76,9 @@
         <label for="transactionAmount">Transaction Amount</label>
         <input type="number" id="transactionAmount" name="transactionAmount" required><br>
 
-        <input type="file" name="csvFile" accept=".csv"> 
-
+        <!-- <input type="file" name="csvFile" accept=".csv">  -->
+        {% csrf_token %}
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
-    <iframe name="detailsFrame" style="display: none;"></iframe>
 </body>
 </html>
