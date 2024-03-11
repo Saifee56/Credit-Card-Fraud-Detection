@@ -4,6 +4,7 @@ from django.http import HttpResponse
 def form1(request):
     return render(request,'form1.html')
 
+#Form information
 def info(request):
     transactionId = request.get('transactionId')
     customerID = request.get('customerID')
