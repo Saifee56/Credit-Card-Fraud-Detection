@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection System</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family:Arial, sans-serif;
+            background-color: #f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 70px;
+            margin-bottom: 50px;
+            width: 400px;
+            
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border:1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #23af2a;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            margin-right: 200px; /* Adjust the value as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Credit Card Details</h1>
+    <form id="TransactionForm" action="method.php" method="post" target="detailsFrame">
+        <label for="transactionId">Transaction ID : </label> 
+        <input type="text" id="transactionId" name="transactionId" required> <br>
+
+        <label for="customerID">Customer ID :</label>
+        <input type="text" id="customerID" name="customerID" required><br>
+
+        <label for="terminalID">Terminal ID: </label>
+        <input type="text" id="terminalID" name="terminalID" required><br>
+
+        <label for="datetime">Date and Time</label>
+        <input type="datetime-local" id='datetime' name="datetime" required><br>
+
+        <label for="transactionAmount">Transaction Amount</label>
+        <input type="number" id="transactionAmount" name="transactionAmount" required><br>
+
+        <input type="file" name="csvFile" accept=".csv"> 
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <iframe name="detailsFrame" style="display: none;"></iframe>
+</body>
+</html>
