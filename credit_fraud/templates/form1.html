@@ -60,25 +60,29 @@
 </head>
 <body>
     <h1>Credit Card Details</h1>
-    <form action="details">
-        <label for="transactionId">Transaction ID : </label> 
-        <input type="text" id="transactionId" name="transactionId" required> <br>
+    <form action="result">
+        <label for="merchant">Merchant : </label> 
+        <input type="number" id="merchant" name="merchant" required> <br>
 
-        <label for="customerID">Customer ID :</label>
-        <input type="text" id="customerID" name="customerID" required><br>
+        <label for="category">Category :</label>
+        <input type="number" id="category" name="category" required><br>
 
-        <label for="terminalID">Terminal ID: </label>
-        <input type="text" id="terminalID" name="terminalID" required><br>
+        <label for="gender">Gender : </label>
+        <input type="number" id='text' name="text" required><br>
 
-        <label for="datetime">Date and Time</label>
-        <input type="datetime-local" id='datetime' name="datetime" required><br>
+        <label for="job">Job :  </label>
+        <input type="number" id="job" name="job" required><br>
 
-        <label for="transactionAmount">Transaction Amount</label>
-        <input type="number" id="transactionAmount" name="transactionAmount" required><br>
+        <label for="unix_time">Unix Time :</label>
+        <input type="number" id="unix_time" name="unix_time" required><br>
+        
+        <label for="merch_lat">Merch Lat :</label>
+        <input type="number" id="merch_lat" name="merch_lat" required><br>
 
-        <!-- <input type="file" name="csvFile" accept=".csv">  -->
-        {% csrf_token %}
-        <button type="button" onclick="submitForm()">Submit</button>
+        <label for="merch_long">Merch Long :</label>
+        <input type="number" id="merch_long" name="merch_long" required><br>
+
+        <input type="submit">
     </form>
 </body>
 </html>
